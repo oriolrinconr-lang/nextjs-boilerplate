@@ -148,3 +148,37 @@ pre {
   font-size: 13px;
   color: var(--muted);
 }
+/* --- Mobile fixes for header/nav --- */
+@media (max-width: 720px) {
+  .headerInner {
+    height: auto;
+    padding: 14px 0;
+    align-items: flex-start;
+  }
+
+  .brandText {
+    font-size: 16px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+
+    /* Permite que el menú no rompa: scroll horizontal */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  .nav::-webkit-scrollbar {
+    height: 0px; /* oculta scrollbar en móviles */
+  }
+
+  .navLink {
+    font-size: 16px;
+    padding: 10px 12px;
+    white-space: nowrap; /* evita que los links se partan */
+    flex: 0 0 auto;
+  }
+}

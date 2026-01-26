@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/entrada" className="brand">
   <span className="brandMark">
     <Image
-      src="/logo.png"
+      src="/3. LF BLANCO EDITADO.png"
       alt="Liberam Facultatem"
       width={22}
       height={22}

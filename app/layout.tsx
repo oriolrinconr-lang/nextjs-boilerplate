@@ -7,7 +7,24 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Liberam Facultatem",
   description: "Esto no es motivación. Es estructura.",
+  openGraph: {
+    title: "Liberam Facultatem",
+    description: "Esto no es motivación. Es estructura.",
+    url: "https://liberam-facultatem.vercel.app",
+    siteName: "Liberam Facultatem",
+    images: [
+      {
+        url: "/1. LF.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Liberam Facultatem",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

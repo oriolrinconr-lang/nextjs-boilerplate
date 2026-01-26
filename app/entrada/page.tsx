@@ -1,10 +1,10 @@
+import Image from "next/image";
 export default function Entrada() {
   return (
-   import Image from "next/image";
-
+   
     <main style={{ maxWidth: 920, margin: "0 auto", padding: 32, fontFamily: "system-ui", lineHeight: 1.75 }}>
      <div style={{ marginBottom: 36 }}>
-  <Image
+    <Image
     src="/entrada.jpg"
     alt="Liberam Facultatem"
     width={1600}

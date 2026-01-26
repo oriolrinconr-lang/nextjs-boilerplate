@@ -18,6 +18,13 @@ export const metadata = {
         height: 630,
         alt: "Liberam Facultatem",
       },
+      twitter: {
+  card: "summary_large_image",
+  title: "Liberam Facultatem",
+  description: "Esto no es motivación. Es estructura.",
+  images: ["https://liberam-facultatem.vercel.app/LFimage.png"],
+},
+
     ],
     locale: "es_ES",
     type: "website",

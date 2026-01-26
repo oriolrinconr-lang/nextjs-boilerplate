@@ -7,7 +7,13 @@ export const metadata = {
   title: "Liberam Facultatem",
   description: "Esto no es motivación. Es estructura.",
   openGraph: {
-    title: "Liberam Facultatem",
+    twitter: {
+  card: "summary_large_image",
+  title: "Liberam Facultatem",
+  description: "Esto no es motivación. Es estructura.",
+  images: ["https://liberam-facultatem.vercel.app/LFimage.png"],
+},
+title: "Liberam Facultatem",
     description: "Esto no es motivación. Es estructura.",
     url: "https://liberam-facultatem.vercel.app",
     siteName: "Liberam Facultatem",
@@ -18,12 +24,6 @@ export const metadata = {
         height: 630,
         alt: "Liberam Facultatem",
       },
-      twitter: {
-  card: "summary_large_image",
-  title: "Liberam Facultatem",
-  description: "Esto no es motivación. Es estructura.",
-  images: ["https://liberam-facultatem.vercel.app/LFimage.png"],
-},
 
     ],
     locale: "es_ES",

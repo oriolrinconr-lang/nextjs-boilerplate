@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
+
 
 export const metadata: Metadata = {
   title: "Liberam Facultatem",
@@ -14,9 +16,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="header">
           <div className="container headerInner">
             <Link href="/entrada" className="brand">
-              <span className="brandMark">LF</span>
-              <span className="brandText">Liberam Facultatem</span>
-            </Link>
+  <span className="brandMark">
+    <Image
+      src="/logo.png"
+      alt="Liberam Facultatem"
+      width={22}
+      height={22}
+      style={{ objectFit: "contain" }}
+    />
+  </span>
+  <span className="brandText">Liberam Facultatem</span>
+</Link>
+
 
             <nav className="nav">
               <Link className="navLink" href="/entrada">Entrada</Link>

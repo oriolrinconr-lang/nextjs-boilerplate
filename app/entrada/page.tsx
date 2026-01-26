@@ -1,6 +1,25 @@
 export default function Entrada() {
   return (
+   import Image from "next/image";
+
     <main style={{ maxWidth: 920, margin: "0 auto", padding: 32, fontFamily: "system-ui", lineHeight: 1.75 }}>
+     <div style={{ marginBottom: 36 }}>
+  <Image
+    src="/entrada.jpg"
+    alt="Liberam Facultatem"
+    width={1600}
+    height={600}
+    style={{
+      width: "100%",
+      height: "auto",
+      borderRadius: "18px",
+      objectFit: "cover",
+      opacity: 0.9,
+    }}
+    priority
+  />
+</div>
+
       <h1>Liberam Facultatem</h1>
 
       <p><strong>Esto no es motivación. Es estructura.</strong></p>

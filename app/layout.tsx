@@ -17,16 +17,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container headerInner">
             <Link href="/entrada" className="brand">
   <span className="brandMark">
-  {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: var(--card);
-}
-
     <Image
       src="/3. LF BLANCO EDITADO.png"
       alt="Liberam Facultatem"

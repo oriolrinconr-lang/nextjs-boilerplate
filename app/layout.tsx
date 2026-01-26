@@ -3,8 +3,10 @@ import "./globals.css";
 import Header from "./components/Header";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://liberam-facultatem.vercel.app"),
   title: "Liberam Facultatem",
   description: "Esto no es motivación. Es estructura.",
+
   openGraph: {
     title: "Liberam Facultatem",
     description: "Esto no es motivación. Es estructura.",
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Liberam Facultatem",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://liberam-facultatem.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Liberam Facultatem",
@@ -22,6 +24,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

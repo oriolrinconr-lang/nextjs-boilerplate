@@ -85,11 +85,11 @@ export default function ManualAutodominio() {
           La Orden empieza en lo obvio:
         </p>
         <ul>
-          <li>cama hecha</li>
-          <li>ropa recogida</li>
-          <li>suelo limpio</li>
-          <li>comida simple</li>
-          <li>móvil bajo control</li>
+          <li>Cama hecha</li>
+          <li>Ropa recogida</li>
+          <li>Suelo limpio</li>
+          <li>Comida simple</li>
+          <li>Móvil bajo control</li>
         </ul>
 
         <h2 style={{ marginTop: 26 }}>7. El pacto</h2>

@@ -1,9 +1,26 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CampoMental() {
   return (
     <main style={{ maxWidth: 920, margin: "0 auto", padding: 32, fontFamily: "system-ui" }}>
-      <h1>Campo Mental</h1>
+      <div style={{ marginBottom: 32 }}>
+  <Image
+    src="/campo mental.jpeg"
+    alt="Campo Mental — Liberam Facultatem"
+    width={1600}
+    height={500}
+    style={{
+      width: "100%",
+      height: "auto",
+      borderRadius: "18px",
+      objectFit: "cover",
+      opacity: 0.85,
+    }}
+    priority
+  />
+</div>
+<h1>Campo Mental</h1>
       <p><strong>Orden interior antes de poder exterior.</strong></p>
 
       <p>

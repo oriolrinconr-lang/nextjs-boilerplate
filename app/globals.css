@@ -66,8 +66,8 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 84px;              /* MÁS ALTURA */
-  gap: 20px;
+  height: 110px;          /* MUCHO MÁS ALTO */
+  gap: 28px;
 }
 
 .brand {
@@ -79,17 +79,21 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brandMark {
-  width: 52px;               /* MÁS GRANDE */
-  height: 52px;
+  width: 70px;            /* GRANDE */
+  height: 70px;
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 18px;
   display: grid;
   place-items: center;
   background: var(--card);
 }
 
-
-.brandText { font-size: 14px; opacity: 0.95; }
+.brandText {
+  font-size: 18px;        /* MÁS GRANDE */
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  opacity: 0.95;
+}
 
 .nav {
   display: flex;
@@ -100,17 +104,18 @@ a { color: inherit; text-decoration: none; }
 }
 
 .navLink {
-  font-size: 16px;          /* TEXTO MÁS GRANDE */
-  padding: 10px 14px;       /* MÁS ESPACIO */
-  border-radius: 14px;
+  font-size: 18px;        /* GRANDE */
+  padding: 14px 18px;     /* MUCHO AIRE */
+  border-radius: 16px;
   border: 1px solid transparent;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .navLink:hover {
   border-color: var(--line);
-  background: var(--card);
+  background: rgba(255,255,255,0.08);
 }
+
 
 h1 { font-size: 34px; margin: 0 0 10px; letter-spacing: -0.6px; }
 h2 { font-size: 20px; margin: 24px 0 10px; letter-spacing: -0.2px; }

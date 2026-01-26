@@ -1,9 +1,26 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CampoFisico() {
   return (
     <main style={{ maxWidth: 920, margin: "0 auto", padding: 32, fontFamily: "system-ui", lineHeight: 1.7 }}>
-      <h1>Campo Físico</h1>
+      <div style={{ marginBottom: 32 }}>
+  <Image
+    src="/campo fisico.jpg"
+    alt="Campo Físico — Liberam Facultatem"
+    width={1600}
+    height={520}
+    style={{
+      width: "100%",
+      height: "auto",
+      borderRadius: "18px",
+      objectFit: "cover",
+      opacity: 0.9,
+    }}
+    priority
+  />
+</div>
+<h1>Campo Físico</h1>
       <p><strong>El cuerpo obedece. La mente aprende.</strong></p>
 
       <p>

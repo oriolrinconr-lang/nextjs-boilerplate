@@ -1,59 +1,33 @@
-"use client";
-
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
 import "./globals.css";
+import Header from "./components/Header";
+
+export const metadata: Metadata = {
+  title: "Liberam Facultatem",
+  description: "Esto no es motivación. Es estructura.",
+  openGraph: {
+    title: "Liberam Facultatem",
+    description: "Esto no es motivación. Es estructura.",
+    url: "https://liberam-facultatem.vercel.app",
+    siteName: "Liberam Facultatem",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Liberam Facultatem",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <html lang="es">
       <body>
-        <header className="header">
-          <div className="container headerInner">
-            <Link href="/entrada" className="brand" onClick={() => setOpen(false)}>
-              <span className="brandMark">
-                <Image
-                  src="/3. LF BLANCO EDITADO.png"
-                  alt="Liberam Facultatem"
-                  width={36}
-                  height={36}
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
-              </span>
-              <span className="brandText">Liberam Facultatem</span>
-            </Link>
-
-            <button
-              className="menuBtn"
-              aria-label="Abrir menú"
-              aria-expanded={open}
-              onClick={() => setOpen(!open)}
-              type="button"
-            >
-              <span className="menuIcon" />
-            </button>
-
-            <nav className={`nav ${open ? "navOpen" : ""}`}>
-              <Link className="navLink" href="/entrada" onClick={() => setOpen(false)}>
-                Entrada
-              </Link>
-              <Link className="navLink" href="/campo-mental" onClick={() => setOpen(false)}>
-                Campo Mental
-              </Link>
-              <Link className="navLink" href="/campo-fisico" onClick={() => setOpen(false)}>
-                Campo Físico
-              </Link>
-              <Link className="navLink" href="/registro" onClick={() => setOpen(false)}>
-                Registro
-              </Link>
-            </nav>
-          </div>
-        </header>
+        <Header />
 
         <main className="container main">{children}</main>
 

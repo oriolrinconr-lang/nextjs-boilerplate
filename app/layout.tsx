@@ -20,8 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Image
       src="/3. LF BLANCO EDITADO.png"
       alt="Liberam Facultatem"
-      width={33}
-      height={33}
+      width={44}
+      height={44}
       style={{ objectFit: "contain" }}
     />
   </span>

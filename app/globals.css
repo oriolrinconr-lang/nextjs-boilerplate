@@ -165,7 +165,6 @@ pre {
   justify-content: flex-start;
   gap: 10px;
   flex-wrap: wrap;
-}
 
     /* Permite que el menú no rompa: scroll horizontal */
     overflow-x: auto;

@@ -1,31 +1,42 @@
 export default function Entrada() {
   return (
-    <main style={{ maxWidth: 860, margin: "0 auto", padding: 32, fontFamily: "system-ui" }}>
+    <main style={{ maxWidth: 920, margin: "0 auto", padding: 32, fontFamily: "system-ui", lineHeight: 1.75 }}>
       <h1>Liberam Facultatem</h1>
+
       <p><strong>Esto no es motivación. Es estructura.</strong></p>
 
-      <h2>Qué es</h2>
       <p>
         Liberam Facultatem es un campo de entrenamiento físico y mental, de orientación
-        estoico-formativa, diseñado para hombres que buscan reconstruirse o elevarse.
-        Aquí no se promete comodidad. Se exige responsabilidad.
+        estoico-formativa, para hombres que están dispuestos a gobernarse.
       </p>
 
-      <h2>Qué no es</h2>
+      <h2>No es para ti si…</h2>
       <ul>
-        <li>No es autoayuda.</li>
-        <li>No es entretenimiento.</li>
-        <li>No es un refugio para víctimas.</li>
+        <li>Buscas motivación en lugar de disciplina.</li>
+        <li>Quieres resultados sin incomodidad.</li>
+        <li>Te defines como víctima y no como responsable.</li>
+        <li>Abandonas cuando nadie te mira.</li>
       </ul>
 
-      <h2>Las dos puertas</h2>
-      <ol>
-        <li><strong>Reconstrucción:</strong> orden, control, salida del caos.</li>
-        <li><strong>Elevación:</strong> afilado, dirección, disciplina superior.</li>
-      </ol>
+      <h2>Qué sí encontrarás</h2>
+      <ul>
+        <li>Orden antes que entusiasmo.</li>
+        <li>Reglas simples sostenidas en el tiempo.</li>
+        <li>Entrenamiento físico y mental integrado.</li>
+        <li>Silencio, constancia y exigencia.</li>
+      </ul>
 
-      <p style={{ marginTop: 32 }}>
-        <em>Acceso limitado. La permanencia se gana.</em>
+      <h2>La entrada</h2>
+      <p>
+        El acceso no es inmediato. Primero hay un <strong>Rito de Entrada</strong>.
+        Siete días de cumplimiento básico. Sin discursos. Sin negociación.
+      </p>
+
+      <p style={{ marginTop: 28 }}>
+        <em>
+          Si no estás dispuesto a cumplir 7 días, no continúes.
+          Vuelve cuando estés listo.
+        </em>
       </p>
     </main>
   );

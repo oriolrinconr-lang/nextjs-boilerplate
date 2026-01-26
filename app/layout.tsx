@@ -1,56 +1,56 @@
+"use client";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import "./globals.css";
 
-
-export const metadata: Metadata = {
-  title: "Liberam Facultatem",
-  description: "Esto no es motivación. Es estructura.",
-  openGraph: {
-    title: "Liberam Facultatem",
-    description: "Esto no es motivación. Es estructura.",
-    url: "https://liberam-facultatem.vercel.app",
-    siteName: "Liberam Facultatem",
-    images: [
-      {
-        url: "/LFimage.png",
-        width: 1200,
-        height: 630,
-        alt: "Liberam Facultatem",
-      },
-    ],
-    locale: "es_ES",
-    type: "website",
-  },
-};
-
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <html lang="es">
       <body>
         <header className="header">
           <div className="container headerInner">
-            <Link href="/entrada" className="brand">
-  <span className="brandMark">
-    <Image
-      src="/3. LF BLANCO EDITADO.png"
-      alt="Liberam Facultatem"
-      width={55}
-      height={55}
-      style={{ objectFit: "contain" }}
-    />
-  </span>
-  <span className="brandText">Liberam Facultatem</span>
-</Link>
+            <Link href="/entrada" className="brand" onClick={() => setOpen(false)}>
+              <span className="brandMark">
+                <Image
+                  src="/3. LF BLANCO EDITADO.png"
+                  alt="Liberam Facultatem"
+                  width={36}
+                  height={36}
+                  style={{ objectFit: "contain" }}
+                  priority
+                />
+              </span>
+              <span className="brandText">Liberam Facultatem</span>
+            </Link>
 
+            <button
+              className="menuBtn"
+              aria-label="Abrir menú"
+              aria-expanded={open}
+              onClick={() => setOpen(!open)}
+              type="button"
+            >
+              <span className="menuIcon" />
+            </button>
 
-            <nav className="nav">
-              <Link className="navLink" href="/entrada">Entrada</Link>
-              <Link className="navLink" href="/campo-mental">Campo Mental</Link>
-              <Link className="navLink" href="/campo-fisico">Campo Físico</Link>
-              <Link className="navLink" href="/registro">Registro</Link>
+            <nav className={`nav ${open ? "navOpen" : ""}`}>
+              <Link className="navLink" href="/entrada" onClick={() => setOpen(false)}>
+                Entrada
+              </Link>
+              <Link className="navLink" href="/campo-mental" onClick={() => setOpen(false)}>
+                Campo Mental
+              </Link>
+              <Link className="navLink" href="/campo-fisico" onClick={() => setOpen(false)}>
+                Campo Físico
+              </Link>
+              <Link className="navLink" href="/registro" onClick={() => setOpen(false)}>
+                Registro
+              </Link>
             </nav>
           </div>
         </header>
@@ -67,3 +67,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

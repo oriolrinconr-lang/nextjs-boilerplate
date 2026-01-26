@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Liberam Facultatem",
     images: [
       {
-        url: "/1. LF.jpg",
+        url: "/LFimage.png",
         width: 1200,
         height: 630,
         alt: "Liberam Facultatem",

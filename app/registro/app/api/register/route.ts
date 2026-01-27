@@ -1,0 +1,31 @@
+export default function RegistroPage() {
+  return <h1>ESTOY EN REGISTRO</h1>;
+}
+import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+export async function POST(req: Request) {
+  const body = await req.json().catch(() => ({}));
+  const name = String(body?.name ?? "").trim();
+  const email = String(body?.email ?? "").toLowerCase().trim();
+  const password = String(body?.password ?? "");
+
+  if (!name || name.length < 2) return NextResponse.json({ error: "Nombre inválido." }, { status: 400 });
+  if (!email || !email.includes("@")) return NextResponse.json({ error: "Email inválido." }, { status: 400 });
+  if (password.length < 8) return NextResponse.json({ error: "Contraseña inválida (mín 8)." }, { status: 400 });
+
+  const exists = await prisma.user.findUnique({ where: { email } });
+  if (exists) return NextResponse.json({ error: "Ese email ya está registrado." }, { status: 409 });
+
+  const passwordHash = await bcrypt.hash(password, 12);
+
+  await prisma.user.create({
+    data: { name, email, passwordHash, status: "REGISTERED" },
+  });
+
+  return NextResponse.json({ ok: true });
+}
+

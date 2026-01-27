@@ -1,45 +1,63 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-export default function Registro() {
+import { useState } from "react";
+
+export default function RegistroPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [msg, setMsg] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setMsg(null);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setMsg(data?.error ?? "Error al registrar.");
+        return;
+      }
+
+      setMsg("Registro completado. Ya puedes iniciar sesión.");
+      setName("");
+      setEmail("");
+      setPassword("");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <main style={{ maxWidth: 920, margin: "0 auto", padding: 32, fontFamily: "system-ui", lineHeight: 1.7 }}>
-      <div style={{ marginBottom: 32 }}>
-  <Image
-    src="/registro.jpg"
-    alt="Registro — Liberam Facultatem"
-    width={1600}
-    height={500}
-    style={{
-      width: "100%",
-      height: "auto",
-      borderRadius: "18px",
-      objectFit: "cover",
-      opacity: 0.85,
-    }}
-    priority
-  />
-</div>
-<h1>Registro</h1>
-      <p><strong>Lo que no se mide, se negocia.</strong></p>
+    <section style={{ maxWidth: 520 }}>
+      <h1 style={{ fontSize: 34, marginBottom: 10 }}>Registro</h1>
+      <p style={{ opacity: 0.7, marginBottom: 18 }}>No es motivación. Es estructura.</p>
 
-      <p>
-        Este sistema no existe para castigarte. Existe para <strong>evitar la mentira</strong>.
-        Aquí no hay “me siento bien”. Hay cumplido o no cumplido.
-      </p>
+      <form onSubmit={onSubmit} style={{ display: "grid", gap: 12 }}>
+        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nombre" minLength={2} required />
+        <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required />
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Contraseña (mín 8)"
+          type="password"
+          minLength={8}
+          required
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? "Creando…" : "Crear cuenta"}
+        </button>
 
-      <section style={{ marginTop: 28 }}>
-        <h2>Accesos</h2>
-        <ul style={{ lineHeight: 2 }}>
-          <li><Link href="/registro/diario">Registro Diario</Link></li>
-          <li><Link href="/registro/semanal">Evaluación Semanal</Link></li>
-          <li style={{ opacity: 0.5 }}>Rachas (bloqueado)</li>
-        </ul>
-      </section>
-
-      <p style={{ marginTop: 36 }}>
-        <em>Sin registro no hay progreso. Solo relatos.</em>
-      </p>
-    </main>
+        {msg && <p style={{ margin: 0 }}>{msg}</p>}
+      </form>
+    </section>
   );
 }

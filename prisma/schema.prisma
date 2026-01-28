@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserStatus {
+  REGISTERED
+  RITE_DONE
+  APPROVED
+  ACTIVE
+  PAUSED
+}
+
+model User {
+  id                String     @id @default(cuid())
+  email             String     @unique
+  passwordHash      String
+  name              String?
+  status            UserStatus @default(REGISTERED)
+
+  stripeCustomerId  String?    @unique
+  subscriptionId    String?    @unique
+  subscriptionState String?
+
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+}

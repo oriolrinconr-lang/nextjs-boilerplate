@@ -9,23 +9,16 @@
     "lint": "next lint",
     "postinstall": "prisma generate"
   },
-  "dependencies": {
-    "next": "16.1.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-<<<<<<< HEAD
-    "@prisma/client": "^6.19.2",
-    "bcryptjs": "^3.0.3"
-  },
+ "dependencies": {
+  "@prisma/client": "^6.19.2",
+  "bcryptjs": "^3.0.3",
+  "next": "16.1.4",
+  "react": "19.2.3",
+  "react-dom": "19.2.3"
+},
+
   "devDependencies": {
     "prisma": "^6.19.2",
-=======
-    "@prisma/client": "^6.0.0",
-    "bcryptjs": "^3.0.3"
-  },
-  "devDependencies": {
-    "prisma": "^6.0.0",
->>>>>>> 9314d60 (Fix Prisma datasource url and generate client)
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
